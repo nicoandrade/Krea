@@ -1,6 +1,6 @@
 === Krea ===
 
-Krea is a beautiful WooCommerce theme, perfect for small business.
+Krea is a beautiful and free portfolio WordPress theme, perfect for any creative use.
 
 Author: Quema Labs
 Tags: light, white, gray, right-sidebar, two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
@@ -54,25 +54,13 @@ ScrollReveal by @jlmakes | MIT License
 License: https://github.com/jlmakes/scrollreveal.js/blob/master/LICENSE.md
 Source: https://scrollrevealjs.org
 
-Isotope by Metafizzy | GPLv3
-License: http://isotope.metafizzy.co/license.html
-Source: http://isotope.metafizzy.co/
-
 imagesLoaded by Metafizzy | MIT License
 License: http://desandro.mit-license.org/
 Source: http://imagesloaded.desandro.com
 
-Packery by Metafizzy | GPLv3
-License: http://packery.metafizzy.co/license.html
-Source: http://packery.metafizzy.co/
-
 Flickity by Metafizzy | GPLv3
 License: http://isotope.metafizzy.co/license.html
 Source: http://isotope.metafizzy.co/
-
-PhotoSwipe by @dimsemenov | MIT License
-License: https://raw.githubusercontent.com/dimsemenov/PhotoSwipe/master/LICENSE
-Source: http://photoswipe.com
 
 Pace
 License: https://raw.githubusercontent.com/HubSpot/pace/master/LICENSE
@@ -82,8 +70,8 @@ HTML5 Shiv by @afarkas @jdalton @jon_neal @rem
 License: MIT/GPL2 Licensed
 Source: https://github.com/afarkas/html5shiv
 
-[Source Sans Pro Font](https://fonts.google.com/specimen/Source+Sans+Pro) by Paul D. Hunt - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
-[Inconsolata Font](https://fonts.google.com/specimen/Inconsolata) by Raph Levien - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
+[Open Sans Font](https://fonts.google.com/specimen/Open+Sans) by Steve Matteson - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
+[Playfair Display Font](https://fonts.google.com/specimen/Playfair+Display) by Claus Eggers Sørensen - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 
 Images from Unsplash
 License: https://unsplash.com/license
