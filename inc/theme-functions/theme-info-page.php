@@ -36,8 +36,8 @@ function quemalabs_getting_started_page() {
 					}
 					?>
 					<li><a href="?page=krea_theme-info&amp;tab=docs" class="<?php echo ( $tab == 'docs' ) ? ' active' : ''; ?>"><i class="fa fa-file-text-o"></i> <?php esc_html_e( 'Documentation', 'krea' ); ?></a></li>
-					<li><a href="<?php echo get_admin_url( null, 'themes.php?page=pt-one-click-demo-import' ); ?>"><i class="fa fa-download"></i> <?php esc_html_e( 'Import Demo', 'krea' ); ?></a></li>
 					<li><a href="https://quemalabs.ticksy.com/" target="_blank"><i class="fa fa-support"></i> <?php esc_html_e( 'Support', 'krea' ); ?></a></li>
+					<li><a href="https://www.quemalabs.com/" target="_blank" class="<?php echo ( $tab == 'more-themes' ) ? ' active' : ''; ?>"><i class="fa fa-wordpress"></i> <?php esc_html_e( 'More Themes', 'krea' ); ?></a></li>
 				</ul>
 
 			</div><!-- .theme-content -->
