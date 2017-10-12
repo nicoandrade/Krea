@@ -15,10 +15,8 @@ function krea_custom_css() {
 	$link_color = get_theme_mod( 'krea_link_color', '#0000ff' );
 	$content_background_color = get_theme_mod( 'krea_content_background_color', '#FFFFFF' );
 	$footer_background = get_theme_mod( 'krea_footer_background', '#FFFFFF' );
-	$site_gradient = get_theme_mod( 'krea_site_gradient', '1' );
 	$site_background_color = get_theme_mod( 'krea_site_background_color', '#e08461' );
 	$logo_color = get_theme_mod( 'krea_logo_color', '#222222' );
-	$quick_view_bck = get_theme_mod( 'krea_shop_quick_view_bck', '#efefef' );
 
 	$colors = array(
 		'heroColor'      => $heroColor,
@@ -27,10 +25,8 @@ function krea_custom_css() {
 		'link_color'     => $link_color,
 		'content_background_color'     => $content_background_color,
 		'footer_background'     => $footer_background,
-		'site_gradient'     => $site_gradient,
 		'site_background_color'     => $site_background_color,
 		'logo_color'     => $logo_color,
-		'quick_view_bck'     => $quick_view_bck,
 
 	);
 
