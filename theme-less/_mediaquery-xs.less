@@ -1,0 +1,352 @@
+@media (max-width: @screen-xs-max) {
+
+	.pace{
+		display: none;
+	}
+
+	/*
+	Header
+	==========================================
+	*/
+
+	#header{
+		position: relative;
+		padding: 0;
+	}
+	.logo_container{
+		position: relative;
+		display: block;
+		float: none;
+		margin-right: 0;
+	}
+
+
+
+	#krea-nav-btn{
+		top: 0;
+		right: 20px;
+		padding: 6px 10px;
+		
+			i{
+				.font-size(24);
+			}
+	}
+
+	.nav_social li{
+		float: none;
+		display: inline-block;
+	}
+	
+	.krea-main-menu{
+		padding: 10vh 10vw;
+
+			.main-navigation{
+
+					ul.menu{
+
+							li{
+								.font-size(30);
+
+									.dropdown-toggle{
+										line-height: 40px;
+										height: 40px;
+									}
+
+									ul.sub-menu{
+
+											li{
+												.font-size(16);
+
+													.dropdown-toggle{
+														line-height: 28px;
+														height: 28px;
+													}
+											}
+									}
+							}
+					}
+
+			}
+	}
+
+	
+
+	/*
+	Home
+	==========================================
+	*/
+	.krea-welcome{
+		padding-bottom: 0;
+
+			.krea-welcome-slider-wrap{
+
+					.krea-welcome-slider{
+						width: 90%;
+
+							&::before{
+								left: 18%;
+								top: 18%;
+								border: 25px solid #fff;
+							}
+					}
+
+					.krea-welcome-slider-title{
+						bottom: -30px;
+						.font-size(28);
+					}
+			}
+
+			.krea-welcome-text-wrap{
+
+					.krea-welcome-text{
+						.font-size(36);
+						margin-top: 70px;
+					}
+			}
+
+	}
+
+
+	/*
+	Main
+	==========================================
+	*/
+	.krea-main-wrap{
+		margin-left: 0;
+	}
+	.krea-sidenav #main{
+		margin-top: 30px;
+	}
+	
+
+	/*
+	Portfolio
+	==========================================
+	*/
+	.krea-portfolio-container{
+		
+			&.krea-portfolio-half{
+
+					.krea-portfolio-item{
+						width: 43%;
+
+							.krea-portfolio-item-image{
+
+									&::before{
+										border: 15px solid #fff;
+									}
+
+									&:hover::before{
+										left: 20%;
+										top: 20%;
+									}
+							}
+
+							.krea-portfolio-item-title{
+								.font-size(18);
+							}
+
+							&:nth-child(even){
+								margin-top: 30%;
+								margin-left: 11%;
+							}
+
+					}
+			
+			}
+	}
+
+
+
+	/*
+	Load More Button
+	============================= */
+	.portfolio-load-wrapper{
+		margin: 1.25em 0 2.5em 0;
+	}
+
+
+
+	/*
+	Content
+	--------------------------------
+	*/
+	.metadata{
+		display: block;
+	}
+	.metadata ul li{
+		float: left;
+	}
+
+	/*Post										*/
+	/*------------------------------------------*/
+	.blog #content .post{
+
+			.post-image{
+				width: 85%;
+				margin-right: 0;
+				margin-bottom: 8%;
+
+						&::before{
+							border: 25px solid #fff;
+							left: 18%;
+							top: 18%;
+						}
+			}
+			
+			.post-content{
+				width: 100%;
+
+					.entry-header{
+						margin-bottom: 2%;
+
+							.post-title{
+								.font-size(28);
+								.translate(0;0);
+
+									&::before{
+										display: none;
+									}
+
+							}
+					}
+
+					.entry-content{
+							
+							.read-more{
+								margin-left: 30px;
+							}
+					}
+
+					.entry-footer{
+							.metadata{
+
+									.meta_author{
+										display: none;
+									}
+							}
+					}
+			}
+
+	}
+
+
+	/*
+	Single
+	============================= */
+	.single .post .entry-footer{
+		text-align: left;
+	}
+	.single .post .entry-footer .metadata ul li{
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.single .post .entry-footer .metadata ul li.meta_date{
+		display: block;
+	}
+
+
+	/*
+	Sidebar
+	==========================================
+	*/
+	#sidebar{
+		padding-left: 20px;
+	}
+
+
+	.krea-preloader {
+		top: 10px;
+		left: 10px;
+		right: 10px;
+	}
+
+
+	/*
+	Comments
+	==========================================
+	*/
+	/*Comments Form---------------------------------------------------*/
+
+	#respond .comment-form{
+		padding: 20px;
+	}
+	#respond .input-wrap{
+		width:100%;
+	}
+
+	#content.col-md-12 #comments{
+		width: 100%;
+	}
+
+	#comments .comment-meta{
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+	#comments .comment-content{
+		width: 100%;
+		display: block;
+	}
+	.comment-list{
+			.children{
+				padding-left: 10px;
+			}
+	}
+
+
+	
+
+	/*
+	Footer
+	==========================================
+	*/
+	#footer{
+
+			.footer-column{
+				display: block;
+				width: 100%;
+				margin: 2% 1%;
+			}
+
+	}
+	.sub-footer p{
+		margin-bottom: 20px;
+		float: none;
+		line-height: 1.6em;
+		text-align: center;
+	}
+	.nav_social{
+		float: none;
+			li{
+				margin: 3px;
+			}
+	}
+
+
+	.section-title{
+		margin-bottom: 4rem;
+	}
+	
+	.krea-sidenav .footer-wrap{
+		margin-left: 0;
+	}
+
+	/*----------- Work Button Widget -----------------*/
+	.widget_glaciar_work_button{
+
+		display: block;
+
+			.widget_glaciar_work_title{
+				.font-size(30) !important;
+				width: 100%;
+				margin-right: 0;
+			}
+			.ql_primary_btn{
+				margin-top: 7%;
+			}
+	}
+
+
+
+}

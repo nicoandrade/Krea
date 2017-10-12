@@ -1,0 +1,78 @@
+/*
+==========================================
+Header
+==========================================
+*/
+#header{
+	position: relative;
+	z-index: 10;
+	.transition( padding 200ms);
+	padding: 0;
+	background-position: center;
+	background-size: cover;
+	margin-bottom: 2.5em;
+
+}
+#header .container{
+	position: relative;
+}
+
+
+.logo_container{
+	margin: 7px 0;
+	line-height: 0;
+}
+.logo_container .site-title{
+	margin: 0;
+	display: inline-block;
+	.font-size(26);
+	line-height: 0;
+
+}
+
+.logo_container .ql_logo{
+	.font-size(26);
+	line-height: 26px;
+	color: @headings-color;
+	font-weight: bold;
+	.transition( all 400ms ease-in-out);
+	display: inline-block;
+	padding: 7px 0;
+	font-family: @headings-font-family;
+	position: relative;
+	z-index: 4;
+
+		.krea-sidenav-out &{
+			color: #fff;
+		}
+}
+
+.logo_container .custom-logo-link{
+	display: block;
+	position: relative;
+	z-index: 4;
+}
+
+.logo_container .ql_logo:hover{
+	text-decoration: none;
+}
+.logo_container .logo_desc{
+	font-family: @font-family-serif;
+	font-style: italic;
+	.font-size(14);
+	color: @gray-light2;
+	margin: 0;
+}
+.logo_container .logo_desc_wrap{
+	.transition( all 500ms ease);
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#header:hover .logo_desc_wrap, #header:hover .krea-nav-btn{
+	opacity: 1;
+}
+.touch #header .logo_desc_wrap, .touch #header .krea-nav-btn, .blog #header .logo_desc_wrap, .blog #header .krea-nav-btn{
+	opacity: 1;
+}
+

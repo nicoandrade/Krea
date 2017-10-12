@@ -1,0 +1,673 @@
+/* Visual Composer - General				*/
+/*------------------------------------------*/
+#main .wpb_content_element{
+	margin-bottom: 10px;
+}
+
+/* Visual Composer - Team Member			*/
+/*------------------------------------------*/
+.glaciar_team_member{
+	width: 100%;
+	padding-bottom: 100%;
+	display: inline-block;
+	background-position: top center;
+    background-size: cover;
+    margin: 1.27%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    .ql_shadow_w_hover;
+
+    	.glaciar_team_hover{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+			display: block;
+			background-color: fade(@heroColor, 88%);
+			overflow: hidden;
+			opacity: 0;
+			.transition( ~"opacity 200ms, transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1)" );
+			.translate( -30%; 0);
+				
+				.glaciar_team_member_text{
+					position: absolute;
+					left: 19%;
+					right: 10%;
+					bottom: 10%;
+					opacity: 0;
+    				.transition( ~"opacity 200ms, transform 700ms cubic-bezier(0.075, 0.82, 0.165, 1)" );
+    				.transition-delay(150ms);
+    				.translate( -45px; 0);
+				}
+
+				.glaciar_team_member_name{
+					margin-bottom: 10px;
+					color: #fff;
+				}
+
+				.glaciar_team_member_job{
+					color: #fff;
+					opacity: 0.8;
+					margin-bottom: 0;
+				}
+
+				.horizontal-lines{
+					position: absolute;
+					right: 106%;
+					top: 0;
+					display: block;
+					height: 20px;
+				}
+
+				.glaciar_team_member_social_icons{
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 86%;
+					margin: 7%;
+					.transition( ~"opacity 200ms, transform 700ms cubic-bezier(0.075, 0.82, 0.165, 1)" );
+					opacity: 0;
+    				.transition-delay(200ms);
+    				.translate( -45px; 0);
+
+					ul{
+						width: 100%;
+						float: none;
+						display: block;
+						text-align: right;
+							li{
+								float: none;
+								display: inline-block;
+								margin-left: 3%;
+									a{
+										background-color: transparent !important;
+											&::before{
+												font-size: 160%;
+												color: #fff;
+												width: 100%;
+												padding-bottom: 100%;
+												vertical-align: middle;
+											}
+									}
+							}
+					}
+				}
+		}
+		.no-touch &:hover .glaciar_team_hover{
+			opacity: 1;
+			.translate( 0; 0);
+
+				.glaciar_team_member_text, .glaciar_team_member_social_icons{
+					opacity: 1;
+					.translate( 0; 0);
+				}
+		}
+}
+
+
+
+/* Visual Composer - FAQs					*/
+/*------------------------------------------*/
+.vc_toggle_title > h4{
+	color: @heroColor;
+	font-weight: normal;
+}
+
+
+/* FAQs										*/
+/*------------------------------------------*/
+.question{
+	.font-size(22);
+	color: @gray-dark;
+	margin-bottom: 0.75em;
+	position: relative;
+	padding-left: 2em;
+	font-family: @headings-font-family;
+	color: @heroColor;
+	&::before{
+		position: absolute;
+		list-style: none;
+		display: inline-block;
+	    font-family: FontAwesome;
+	    font-style: normal;
+	    font-weight: normal;
+	    text-decoration: inherit;
+	    content: "";
+	    font-size: 24px;
+	    left: 0;
+	    top: 50%;
+	    .translate(0;-50%);
+	    width: 24px;
+	    height: 24px;
+	    line-height: 24px;
+	    color: #33a3e4;
+	}
+}
+.answer{
+	margin-bottom: 2.8125em;
+	padding-bottom: 2.8125em;
+	position: relative;
+	margin-left: 2.5em;
+	border-bottom: 2px solid @gray-lighter2;
+}
+
+
+
+
+
+/* Products Carousel						*/
+/*------------------------------------------*/
+.krea-products-carousel-hr{
+	border-top: 2px solid @gray-lighter;
+	width: 50%;
+	text-align: left;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+.krea-products-carousel{
+	position: relative;
+	padding: 1.875em 0;
+
+		ul.products{
+			padding-left: 0;
+			margin: 0;
+
+				.product{
+					width: 18.6%;
+					margin: 0;
+					padding: 0.7%;
+					display: inline-block;
+					position: relative;
+					float: none;
+
+						.onsale{
+							top: 20px;
+							right: 20px;
+						}
+				}
+
+				.krea-products-carousel-intro{
+					width: 42vw;
+					text-align: right;
+
+						.krea-sidenav &{
+							width: 34.5vw;
+						}
+
+						.krea-products-carousel-intro-inner{
+							width: 267px;
+							text-align: left;
+							display: inline-block;
+
+								.krea-products-carousel-title{
+									margin: 0.58823529411765em 0;
+								}
+						}
+
+				}
+		}
+}
+/* Large */
+@media (min-width: @screen-lg-min) {
+
+	.krea-products-carousel{
+
+			ul.products{
+
+					.krea-products-carousel-intro{
+						width: 43.7vw;
+
+							.krea-products-carousel-intro-inner{
+								width: 350px;
+							}
+					}
+			}
+	}
+
+}
+/* Small */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+	.krea-products-carousel{
+
+			ul.products{
+
+					.product{
+						width: 32.1%;
+						margin: 0;
+						padding: 0.6%;
+					}
+
+					.krea-products-carousel-intro{
+						width: 32.1%;
+						padding-left: 20px;
+
+							.krea-products-carousel-intro-inner{
+								width: 240px;
+							}
+					}
+			}
+	}
+
+}
+/* Extra-Small */
+@media (max-width: @screen-xs-max) {
+
+	.krea-products-carousel{
+
+			ul.products{
+
+					.product{
+						width: 46%;
+						margin: 0;
+						padding: 1.5%;
+					}
+
+					.krea-products-carousel-intro{
+						width: 46%;
+						padding-left: 20px;
+
+							.krea-products-carousel-intro-inner{
+								width: 100%;
+							}
+					}
+			}
+	}
+
+}
+
+
+
+
+
+/* Offer Banner								*/
+/*------------------------------------------*/
+.krea-offer-banner{
+	position: relative;
+	margin-bottom: 30px;
+	background-color: #ede8e5;
+
+		.krea-offer-banner-image{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50%;
+			background-position: center;
+    		background-size: cover;
+
+
+		}
+
+		.krea-offer-banner-info{
+			display: block;
+			margin-left: 50%;
+			padding: 40px 40px 115px;
+			width: 50%;
+
+				.ql_secundary_btn{
+					margin-top: 20px;
+				}
+		}
+
+		
+
+		.krea-offer-banner-countdown{
+			background-color: #fff;
+			padding: 14px 18px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			min-width: 275px;
+
+				.krea-offer-banner-time{
+					display: inline-block;
+					text-align: center;
+					font-family: @font-family-monospace;
+					margin: 0 15px;
+					.font-size(24);
+					line-height: 30px;
+					font-weight: bold;
+					color: @gray-dark;
+
+						span{
+							display: block;
+							.font-size(13);
+							color: @gray-light;
+							font-weight: normal;
+							line-height: 10px;
+						}
+				}
+		}
+	
+}
+
+/* Extra-Small */
+@media (max-width: @screen-xs-max) {
+
+	.krea-offer-banner{
+
+			.krea-offer-banner-image{
+				width: 100%;
+				position: relative;
+				padding-bottom: 99%;
+			}
+
+			.krea-offer-banner-info{
+				margin-left: 0;
+				width: 100%;
+			}
+
+			.krea-offer-banner-countdown{
+				left: 20px;
+				right: 20px;
+				bottom: 20px;
+				text-align: center;
+			}
+
+	}
+
+}
+
+
+
+/* Image Banner								*/
+/*------------------------------------------*/
+.krea-image-banner{
+	position: relative;
+		
+		img{
+			width: 100%;
+		}
+		
+		.krea-image-banner-content{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 20px;
+
+				.krea-image-banner-content-link{
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+
+				}
+		}
+}
+
+
+
+/* Products Slider							*/
+/*------------------------------------------*/
+.krea-products-slider{
+	position: relative;
+	padding: 0 0.7% 1.875em 0.7%;
+
+		ul.products{
+			padding-left: 0;
+			margin: 0;
+
+				.product{
+					width: 35vw;
+					margin: 0;
+					padding: 0.7%;
+					display: inline-block;
+					position: relative;
+					float: none;
+
+						.onsale{
+							top: 20px;
+							right: 20px;
+						}
+				}
+
+		}
+}
+/* Large */
+@media (min-width: @screen-lg-min) {
+
+	.krea-products-slider{
+
+			ul.products{
+					
+			}
+	}
+
+}
+/* Small */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+	.krea-products-slider{
+
+			ul.products{
+
+					.product{
+						width: 50vw;
+						margin: 0;
+						padding: 0.6%;
+					}
+			}
+	}
+
+}
+/* Extra-Small */
+@media (max-width: @screen-xs-max) {
+
+	.krea-products-slider{
+
+			ul.products{
+
+					.product{
+						width: 80vw;
+						margin: 0;
+						padding: 1.5%;
+					}
+			}
+	}
+
+}
+
+
+
+/* Instagram Box							*/
+/*------------------------------------------*/
+.krea-instagram-box{
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 30px;
+
+		.krea-instagram-box-images{
+			position: absolute;
+			top: -100px;
+			left: 0;
+			right: 0;
+			z-index: -1;
+
+				.krea-instagram-box-image{
+					display: inline-block;
+					width: 15.6%;
+					margin: 0.5%;
+					opacity: .3;
+
+						img{
+							width: 100%;
+						}
+				}
+		}
+
+		.krea-instagram-box-content{
+			background-color: #fff;
+			padding: 50px;
+			width: 24%;
+			margin: 8% auto;
+			text-align: center;
+			position: relative;
+			.box-shadow( 0 15px 35px rgba(0,0,0,0.2) );
+			border-radius: 3px;
+
+				i{
+					.font-size(64);
+					color: #000;
+					margin-bottom: 10px;
+				}
+
+				.krea-instagram-box-account{
+					.font-size(30);
+				}
+
+				.krea-instagram-box-btn{
+					position: absolute;
+					bottom: -22px;
+					left: 50%;
+					.translate(-50%;0);
+					.ql_primary_btn;
+
+						&:active,
+						&:focus {
+							position: absolute;
+							bottom: -23px;
+						}
+				}
+		}
+	
+}
+
+/* Small */
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+	.krea-instagram-box{
+
+			.krea-instagram-box-images{
+				top: -80px;
+
+					.krea-instagram-box-image{
+						width: 19%;
+					}
+			}
+
+			.krea-instagram-box-content{
+				width: 44%;
+			}
+	}
+
+}
+
+/* Extra-Small */
+@media (max-width: @screen-xs-max) {
+
+	.krea-instagram-box{
+
+			.krea-instagram-box-images{
+				top: -80px;
+
+					.krea-instagram-box-image{
+						width: 23.8%;
+					}
+			}
+
+			.krea-instagram-box-content{
+				width: 80%;
+				margin: 14% auto;
+			}
+	}
+
+}
+
+
+
+/* Stairs Products							*/
+/*------------------------------------------*/
+.krea-stairs-products{
+
+		.woocommerce{
+			display: inline-block;
+			width: 41%;
+			margin: 1%;
+			vertical-align: top;
+
+				&:nth-child(even){
+					margin-left: 6%;
+					margin-top: 22%;
+				}
+				&:nth-child(odd){
+					margin-right: 6%;
+				}
+
+				& > .products > .product{
+					width: 100%;
+				}
+		}
+}
+
+
+
+/* Gallery 																*/
+/*----------------------------------------------------------------------*/
+.krea-gallery{
+	
+		.krea-gallery-item{
+			width: 30.75%;
+			height: auto;
+    		margin: 1.2%;
+    		padding-bottom: 1px !important;
+    		position: relative;
+				
+				a{
+    				position: absolute;
+    				top: 0;
+    				left: 0;
+    				right: 0;
+    				bottom: 0;
+    				display: block;
+    				z-index: 4;
+    			}
+
+    			.krea-gallery-item-image{
+	    			display: block;
+	    		}
+		}
+
+		&.krea-5-columns{
+
+				.krea-gallery-item{
+					width: 18%;
+					margin: 1%;
+				}
+
+		}
+		&.krea-4-columns{
+
+				.krea-gallery-item{
+					width: 22.5%;
+					margin: 1.2%;
+				}
+
+		}
+		&.krea-3-columns{
+
+				.krea-gallery-item{
+					width: 30.75%;
+					margin: 1.2%;
+				}
+
+		}
+		&.krea-2-columns{
+
+				.krea-gallery-item{
+					width: 47.5%;
+					margin: 1.2%;
+				}
+
+		}
+}

@@ -1,0 +1,145 @@
+.krea-welcome{
+	margin: 50px 0;
+	padding-bottom: 90px;
+	position: relative;
+
+		&:before{
+			position: absolute;
+			content: "";
+			bottom: 50px;
+			right: 0;
+			width: 1px;
+			height: 150px;
+			background-color: #000;
+		}
+		
+		.krea-welcome-slider-wrap{
+			position: relative;
+
+				.krea-welcome-slider{
+					width: 80%;
+					position: relative;
+
+						&::before{
+							position: absolute;
+							content: "";
+							width: 100%;
+							height: 100%;
+							left: 18%;
+							top: 18%;
+							border: 35px solid #fff;
+							.transition(all 800ms cubic-bezier(0.075, 0.82, 0.165, 1));
+						}
+
+						// &:hover::before{
+						// 	left: 14% !important;
+						// 	top: 14% !important;
+						// }
+
+
+						.krea-welcome-slider-item{
+							width: 100%;
+							display: block;
+
+								img{
+									width: 100%;
+								}
+						}
+
+						.flickity-page-dots{
+							bottom: 0;
+							left: -15px;
+							width: 25px;
+							text-align: right;
+
+								.dot{
+									display: block;
+									border-radius: 0;
+									height: 1px;
+									width: 5px;
+									margin: 12px 0;
+									padding: 0;
+									opacity: 0.7;
+									.transition(width 200ms);
+
+										&.is-selected{
+											width: 25px;
+											opacity: 1;
+										}
+								}
+						}
+				}
+
+				.krea-welcome-slider-title{
+					position: absolute;
+					bottom: -47px;
+					right: 17%;
+					text-align: right;
+					.font-size(52);
+
+						&::before{
+							position: absolute;
+							content: "";
+							width: 30px;
+							height: 1px;
+							top: 50%;
+							left: -45px;
+							background-color: #000;
+							.transition(width 300ms);
+						}
+
+						&:hover::before{
+							width: 130%;
+						}
+
+						a{
+							color: #000;
+
+								&:hover{
+									text-decoration: none;
+								}
+						}	
+				}
+		}
+
+		.krea-welcome-text-wrap{
+
+				.krea-welcome-text{
+					.font-size(56);
+					line-height: 1.41071428571429em;
+					color: #000;
+					position: relative;
+					margin-top: 30px;
+
+						span{
+							background-color: blue;
+							color: #fff;
+							padding: 0 5px;
+							overflow: hidden;
+							position: relative;
+
+						}
+						span.clone{
+							display: none;
+							color: #000;
+							position: absolute;
+							background-color: @body-bg;
+							top: 0;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							//padding: 0;
+							.transition(width 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+						}
+				}
+		}
+
+		.krea-welcome-menu{
+			display: block;
+
+				.nav_social li a{
+					color: #000;
+				}
+
+		}
+}

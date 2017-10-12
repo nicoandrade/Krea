@@ -1,0 +1,291 @@
+/*
+Body
+============================= */
+.ql_animations .krea-decoration-lines{
+    opacity: 0;
+    .transition(all 800ms cubic-bezier(0.075, 0.82, 0.165, 1));
+
+        &.krea-decoration-lines1{
+            top: -30%;
+            .transition-delay(600ms);
+        }
+        &.krea-decoration-lines2{
+            top: -50%;
+            .transition-delay(800ms);
+        }
+        &.krea-decoration-lines3{
+            top: 30%;
+            .transition-delay(1000ms);
+        }
+        &.krea-decoration-lines4{
+            top: 70%;
+            .transition-delay(1200ms);
+        }
+    
+}
+.pace-done.ql_animations .krea-decoration-lines{
+    opacity: .15;
+    &.krea-decoration-lines1{
+        top: -20%;
+    }
+    &.krea-decoration-lines2{
+        top: -40%;
+    }
+    &.krea-decoration-lines3{
+        top: 40%;
+    }
+    &.krea-decoration-lines4{
+        top: 80%;
+    }
+}
+
+
+/*
+Home Page
+============================= */
+//Welcome Text
+.ql_animations .krea-welcome .krea-welcome-text{
+    .transition(all 1400ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(1000ms);
+    opacity: 0;
+    .translate(0;-50px);
+}
+.pace-done.ql_animations .krea-welcome .krea-welcome-text{
+    .translate(0;0);
+    opacity: 1;
+}
+.ql_animations .krea-welcome .krea-welcome-text span.clone{
+    display: block;
+    .transition-delay(1300ms);
+}
+.pace-done.ql_animations .krea-welcome .krea-welcome-text span.clone{
+    width: 0;
+    padding: 0;
+}
+
+//Slider
+.ql_animations .krea-welcome .krea-welcome-slider{
+    opacity: 0;
+    .translate(0;-50px);
+    .transition(all 1000ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(200ms);
+}
+.pace-done.ql_animations .krea-welcome .krea-welcome-slider{
+    .translate(0;0);
+    opacity: 1;
+}
+.ql_animations .krea-welcome .krea-welcome-slider::before{
+    left: 0;
+    top: 0;
+    .transition(all 1300ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(500ms);
+}
+.pace-done.ql_animations .krea-welcome .krea-welcome-slider::before{
+    left: 18%;
+    top: 18%;
+}
+.ql_animations .krea-welcome .krea-welcome-slider-title{
+    opacity: 0;
+    .translate(50px;0);
+    .transition(all 800ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+}
+.pace-done.ql_animations .krea-welcome .krea-welcome-slider-title{
+    .translate(0;0);
+    opacity: 1;
+}
+
+//Line
+.ql_animations .krea-welcome::before{
+    height: 0;
+    .transition(height 1500ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(1700ms);
+}
+.pace-done.ql_animations .krea-welcome::before{
+    height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+Page Title
+============================= */
+.ql_animations .entry-header .page-title, .ql_animations .entry-header .post-title, .ql_animations .page-header .page-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(40px;0);
+}
+.pace-done.ql_animations .entry-header .page-title, .pace-done.ql_animations .entry-header .post-title, .pace-done.ql_animations .page-header .page-title{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations .entry-header .svg-title, .ql_animations .page-header .svg-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(-110%;0);
+}
+.pace-done.ql_animations .entry-header .svg-title, .pace-done.ql_animations .page-header .svg-title{
+    opacity: 1;
+    .translate(-102%;0);
+}
+
+
+/*
+Entry Content
+============================= */
+.ql_animations #content .post-content{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(0;20px);
+}
+.pace-done.ql_animations #content .post-content{
+    opacity: 1;
+    .translate(0;0);
+}
+//Post image
+.ql_animations #content .post-image{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;20px);
+}
+.pace-done.ql_animations #content .post-image{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.delay-blog-posts(10);
+
+.delay-blog-posts(@n, @i: 0) when (@i =< @n) {
+    .ql_animations #content .post:nth-child(@{i}) .post-image{
+        .transition-delay( unit( ( ( @i * 70 ) + 600 ), ms ) );
+    }
+    .blog.ql_animations #content .post:nth-child(@{i}) .post-content{
+        .transition-delay( unit( ( ( @i * 90 ) + 800 ), ms ) );
+    }
+  .delay-blog-posts(@n, (@i + 1));
+}
+
+
+/*
+Pagination
+============================= */
+.ql_animations .pagination{
+    opacity: 0;
+    .transition( all 900ms cubic-bezier(0.075, 0.82, 0.165, 1)  );
+    .transition-delay(800ms);
+    .translate(0;30px);
+}
+.pace-done.ql_animations .pagination{
+    opacity: 1;
+    .translate(0;0);
+}
+
+
+/*
+Single Metadata
+============================= */
+.ql_animations.single .metadata, .ql_animations.single .glaciar-horizontal{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(-30px;0);
+}
+.ql_animations.single .glaciar-horizontal{
+    .transition-delay(700ms);
+}
+.pace-done.ql_animations.single .metadata, .pace-done.ql_animations.single .glaciar-horizontal{
+    opacity: 1;
+    .translate(0;0);
+}
+
+/*
+Sidebar
+============================= */
+.ql_animations #sidebar .widget{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(40px;0);
+}
+.delay-sidebar-widgets(10);
+
+.delay-sidebar-widgets(@n, @i: 0) when (@i =< @n) {
+    .ql_animations #sidebar .widget:nth-child(@{i}){
+        .transition-delay( unit( ( ( @i * 50 ) + 600 ), ms ) );
+    }
+  .delay-sidebar-widgets(@n, (@i + 1));
+}
+.pace-done.ql_animations #sidebar .widget{
+    opacity: 1;
+    .translate(0;0);
+}
+
+
+/*
+Portfolio
+============================= */
+.ql_animations .krea-portfolio-item{
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .translate(0;25%);
+    opacity: 0;
+}
+.ql_animations .krea-portfolio-item.krea-is-visible{
+    .translate(0;0);
+    opacity: 1;
+}
+
+/*
+Contact Page
+============================= */
+.ql_animations .glaciar-contact-image{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations .glaciar-contact-image{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations .glaciar-contact-form{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(66%;-27%);
+
+        &.no-image{
+            .translate(66%;-3%);
+        }
+}
+.pace-done.ql_animations .glaciar-contact-form{
+    opacity: 1;
+    .translate(66%;-25%);
+        
+        &.no-image{
+            .translate(66%;0);
+        }
+}
+
+.ql_animations #map-section{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations #map-section{
+    opacity: 1;
+    .translate(0;0);
+}

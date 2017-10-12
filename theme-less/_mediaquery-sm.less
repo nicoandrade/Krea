@@ -1,0 +1,449 @@
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+	.container{
+		width: 100%;
+	}
+
+	/*
+	Header
+	==========================================
+	*/
+	#header{
+		padding: 0;
+	}
+	.logo_container{
+		text-align: center;
+		position: relative;
+		width: 100%;
+		margin-bottom: 0;
+		padding-bottom: 15px;
+		margin-top: 15px;
+
+			&::before{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				border-bottom: 1px solid @gray-lighter;
+			}
+	}
+
+
+
+	/*
+	Home
+	==========================================
+	*/
+	.krea-welcome{
+		padding-bottom: 0;
+
+			.krea-welcome-slider-wrap{
+
+					.krea-welcome-slider{
+						width: 80%;
+
+
+					}
+
+			}
+
+			.krea-welcome-text-wrap{
+
+					.krea-welcome-text{
+						.font-size(36);
+						margin-top: 80px;
+					}
+			}
+
+	}
+
+
+	/*
+	Main
+	==========================================
+	*/
+	.krea-main-wrap{
+		margin-left: 0;
+	}
+	.krea-sidenav #main{
+		margin-top: 30px;
+	}
+	
+
+
+	/*
+	Portfolio
+	==========================================
+	*/
+	.krea-portfolio-container{
+		
+			&.krea-portfolio-half{
+
+					.krea-portfolio-item{
+
+							.krea-portfolio-item-image{
+
+									&::before{
+										border: 25px solid #fff;
+									}
+							}
+
+							.krea-portfolio-item-title{
+								.font-size(28);
+							}
+
+						
+						&:nth-child(even){
+							margin-top: 30%;
+							margin-left: 14%;
+						}
+					}
+			
+			}
+	}
+
+	
+
+	/*
+	Content
+	==========================================
+	*/
+	.metadata ul li{
+		float: left;
+	}
+
+	
+	/*Post										*/
+	/*------------------------------------------*/
+	.blog #content .post{
+
+			.post-image{
+
+						&::before{
+							border: 25px solid #fff;
+						}
+			}
+			
+			.post-content{
+
+					.entry-header{
+
+							.post-title{
+								.font-size(34);
+
+							}
+					}
+
+					.entry-content{
+
+					}
+
+					.entry-footer{
+							.metadata{
+
+									.meta_author{
+										display: none;
+									}
+							}
+					}
+			}
+
+	}
+
+
+
+	/*
+	Sidebar
+	==========================================
+	*/
+	#sidebar{
+			.widget{
+				width: 45%;
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 2.5%;
+			}
+	}
+
+	.krea-sidenav-out .sidebar-wrap{
+		margin-top: 210px;
+	}
+	
+	
+	.krea-sidenav .footer-wrap{
+		margin-left: 0;
+	}
+
+	/*
+	Single
+	============================= */
+	.single .post .entry-footer{
+		text-align: left;
+	}
+	.single .post .entry-footer .metadata ul li{
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.single .post .entry-footer .metadata ul li.meta_date{
+		display: block;
+	}
+
+
+
+
+	/*Comments Form---------------------------------------------------*/
+	#respond .input-wrap{
+		width:46%;
+	}
+	#content.col-md-12 #comments{
+		width: 100%;
+	}
+
+
+	/*
+	==========================================
+	Footer Top
+	==========================================
+	*/
+	.footer-top{
+			ul{
+				height: 17px;
+					li{
+						border-width: 0 43px 17px 43px;
+
+					}
+			}
+	}
+
+
+	/*----------- Work Button Widget -----------------*/
+	.widget_glaciar_work_button{
+
+		display: block;
+
+			.widget_glaciar_work_title{
+				width: 100%;
+				margin-right: 0;
+			}
+			.ql_primary_btn{
+				margin-top: 7%;
+			}
+	}
+
+
+	/*
+	Contact Page
+	==========================================
+	*/
+
+	.glaciar-contact-image, #map-section #map{
+		width: 100%;
+	}
+	.glaciar-contact-form{
+		.translate(0;0) !important;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	/*
+	About Individual
+	==========================================
+	*/
+	.about_individual_text .vc_column-inner{
+		margin-left: 0 !important;
+		width: auto;
+	}
+
+	/*
+	Cart
+	==========================================
+	*/
+	.woocommerce-cart .cart .cart_item{
+		width: 31%;
+	}
+	.woocommerce-cart #content form{
+		width: 100%;
+		display: block;
+	}
+	.woocommerce-cart #content .cart-collaterals{
+		width: 100%;
+		display: block;
+		margin-left: 0;
+	}
+	
+
+
+
+	/* Product View
+	=====================================================*/
+	.krea-product-view, .woocommerce .krea-product-view{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: auto;
+		width: 100%;
+		margin-top: 6.875em;
+		.translate(0; 200px);
+
+			.woocommerce-product-gallery__wrapper{
+				height: auto;
+				width: 100%;
+
+
+					.woocommerce-product-gallery__image{
+						height: auto;
+						width: 100% !important;
+
+							img{
+								height: auto;
+								width: 100%;
+								max-width: initial;
+							}
+					}
+			}
+
+			.krea-product-thumbnails{
+				bottom: auto;
+				top: 20px;
+				left: 80px;
+
+					.krea-product-thumbnail{
+						width: 40px;
+					}
+
+			}
+
+			.krea-product-desc{
+				position: relative;
+				top: initial;
+				right: initial;
+				.translate(0;50px);
+				width: 100%;
+				min-width: 100%;
+
+					.summary{
+
+						.summary-top{
+							margin-bottom: 0;
+							padding: 1.875em 1.875em 0 1.875em;
+						}
+
+						.entry{
+							border-radius: 0;
+							padding: 1.875em;
+
+						}
+					}
+			}
+
+			&.krea-display{
+
+					.krea-product-desc{
+						opacity: 1;
+						.translate(0;0);
+					}
+					.krea-product-view-exit{
+						opacity: 1;
+						.translate(0;0);
+					}
+			}
+
+			.krea-product-view-exit{
+				top: 20px;
+
+					.krea-header-2 &{
+						top: 20px;
+					}
+			}
+
+	}
+
+
+	.krea-fullscreen-image{
+		
+			&.krea-hide{
+				visibility: hidden;
+			}
+	}
+
+
+	body.krea-current-product-view{
+		overflow: visible;
+		padding-right: 0;
+
+			.krea-site-wrap{
+				overflow: hidden;
+				height: 100vh;
+			}
+	}
+
+	/* Single Product Product View
+	=====================================================*/
+	.single-product{
+			#header{
+				margin-bottom: 0;
+			}
+			.krea-product-view{
+				.translate(0; 0);
+				position: relative;
+				margin-top: 0;
+
+					.krea-product-desc{
+						.translate(0;0);
+					}
+
+					.krea-product-view-exit{
+						.translate(0;0);
+
+							.admin-bar&{
+								top: 20px;
+							}
+					}
+			}
+			.product{
+				padding-top: 30px;
+			}
+	}
+
+
+/* WooCommerce Mini Cart
+=====================================================*/
+.krea-mini-cart{
+	position: fixed;
+	bottom: -90px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-color: #000;
+	padding: 10px;
+	.transition( bottom 600ms cubic-bezier(0.075, 0.82, 0.165, 1) );
+
+		.woocommerce-mini-cart{
+			display: inline-block;
+			width: 60%;
+			vertical-align: top;
+		}
+
+		.woocommerce-mini-cart__total{
+			width: 19%;
+			.font-size(14);
+		}
+
+		.woocommerce-mini-cart__buttons{
+			width: 20%;
+				
+				.button{
+					display: none;
+				}
+				.button.checkout{
+					display: inline-block;
+					padding: 17px;
+				}
+		}
+
+}
+
+
+}
