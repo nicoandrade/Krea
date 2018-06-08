@@ -28,14 +28,15 @@ function krea_metadata() {
 		esc_html( get_the_modified_date() )
 	);
 
-	echo '<li class="meta_date">' . $time_string . '</li>';
+	echo '<li class="meta_date">' . $time_string . '</li>'; // WPCS: XSS OK.
 
 	$byline = sprintf(
+		/* translators: %s: post author */
 		esc_html_x( 'by %s', 'post author', 'krea' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<li class="meta_author">' . $byline . '</li>';
+	echo '<li class="meta_author">' . $byline . '</li>'; // WPCS: XSS OK.
 
 
 
@@ -44,12 +45,20 @@ function krea_metadata() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'krea' ) );
 		if ( $categories_list && krea_categorized_blog() ) {
-			printf( '<li class="meta_categories"><span class="cat-links">' . esc_html__( 'In %1$s', 'krea' ) . '</span></li>', $categories_list ); // WPCS: XSS OK.
+			printf( 
+				/* translators: %s: category */
+				'<li class="meta_categories"><span class="cat-links">' . esc_html__( 'In %1$s', 'krea' ) . '</span></li>', 
+				wp_kses_post( $categories_list )
+			); // WPCS: XSS OK.
 		}
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'krea' ) );
 		if ( $tags_list ) {
-			printf( '<li class="meta_tags"><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'krea' ) . '</span></li>', $tags_list ); // WPCS: XSS OK.
+			printf( 
+				/* translators: %s: tag */
+				'<li class="meta_tags"><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'krea' ) . '</span></li>', 
+				wp_kses_post( $tags_list )
+			); // WPCS: XSS OK.
 		}
 	}
 

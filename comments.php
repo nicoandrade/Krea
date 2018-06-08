@@ -30,17 +30,17 @@ if ( post_password_required() ) {
 				$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
 					/* translators: %s: post title */
-					printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'krea' ), get_the_title() );
+					printf( esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'krea' ), get_the_title() );
 				} else {
-					printf(
+					printf( // WPCS: XSS OK.
 						/* translators: 1: number of comments, 2: post title */
-						_nx(
+						esc_html( _nx(
 							'%1$s Reply to &ldquo;%2$s&rdquo;',
 							'%1$s Replies to &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
 							'krea'
-						),
+						) ),
 						number_format_i18n( $comments_number ),
 						get_the_title()
 					);

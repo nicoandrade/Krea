@@ -310,25 +310,25 @@ if ( ! function_exists( 'krea_post_navigation' ) ) {
             <nav class="navigation post-navigation" >
                 <div class="nav-links">
                     <?php if ( ! empty( $prev_post ) ): ?>
-                    <div class="nav-previous" <?php echo $post_nav_bck; ?>>
+                    <div class="nav-previous" <?php echo $post_nav_bck; // WPCS: XSS OK. ?>>
                         <?php
                         $prev_text = esc_html__( 'Previous Post', 'krea' );
                         if ( krea_is_portfolio_type( get_post_type() ) ) {
                             $prev_text = esc_html__( 'Previous Project', 'krea' );
                         }
                         ?>
-                        <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev"><span><?php echo $prev_text; ?></span><?php echo esc_html( $prev_post->post_title ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev"><span><?php echo $prev_text; // WPCS: XSS OK. ?></span><?php echo esc_html( $prev_post->post_title ); ?></a>
                     </div>
                     <?php endif; ?>
                     <?php if ( ! empty( $next_post ) ): ?>
-                    <div class="nav-next" <?php echo $post_nav_bck_next; ?>>
+                    <div class="nav-next" <?php echo $post_nav_bck_next; // WPCS: XSS OK. ?>>
                         <?php
                         $next_text = esc_html__( 'Next Post', 'krea' );
                         if ( krea_is_portfolio_type( get_post_type() ) ) {
                             $next_text = esc_html__( 'Next Project', 'krea' );
                         }
                         ?>
-                        <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"><span><?php echo $next_text; ?></span><?php echo esc_html( $next_post->post_title ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"><span><?php echo $next_text; // WPCS: XSS OK. ?></span><?php echo esc_html( $next_post->post_title ); ?></a>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -720,125 +720,3 @@ function krea_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
     return $title;
 }
 add_filter( 'nav_menu_item_title', 'krea_dropdown_icon_to_menu_link', 10, 4 );
-
-
-
-/**
- * Scrapper for Instagram
- *
- * @param  string $username instagram user.
- * @param  string $max_id  .
- */
-// based on https://gist.github.com/cosmocatalano/4544576
-    function krea_scrape_instagram( $username, $max_id = '' ) {
-
-        $username = strtolower( $username );
-        $username = str_replace( '@', '', $username );
-
-        if ( ! empty( $max_id ) ) {
-            $instagram = get_transient( 'olivo-instagram-a10-' . sanitize_title_with_dashes( $username ) . '-' . sanitize_title_with_dashes( $max_id ) );
-        }else{
-            $instagram = get_transient( 'olivo-instagram-a10-' . sanitize_title_with_dashes( $username ) );
-        }
-
-        if ( false === $instagram ) {
-
-            $add_par = '';
-            if ( $max_id ) {
-               $add_par = '/?max_id=' . sanitize_title_with_dashes( $max_id );
-            }
-            $remote = wp_remote_get( 'http://instagram.com/' . trim( $username ) . $add_par );
-
-            if ( is_wp_error( $remote ) )
-                return new WP_Error( 'site_down', esc_html__( 'Unable to communicate with Instagram.', 'olivo' ) );
-
-            if ( 200 != wp_remote_retrieve_response_code( $remote ) )
-                return new WP_Error( 'invalid_response', esc_html__( 'Instagram did not return a 200.', 'olivo' ) );
-
-            $shards = explode( 'window._sharedData = ', $remote['body'] );
-            $insta_json = explode( ';</script>', $shards[1] );
-            $insta_array = json_decode( $insta_json[0], TRUE );
-
-            if ( ! $insta_array )
-                return new WP_Error( 'bad_json', esc_html__( 'Instagram has returned invalid data.', 'olivo' ) );
-
-            if ( isset( $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'] ) ) {
-                $images = $insta_array['entry_data']['ProfilePage'][0]['user']['media']['nodes'];
-            } else {
-                return new WP_Error( 'bad_json_2', esc_html__( 'Instagram has returned invalid data.', 'olivo' ) );
-            }
-            
-
-            if ( ! is_array( $images ) )
-                return new WP_Error( 'bad_array', esc_html__( 'Instagram has returned invalid data.', 'olivo' ) );
-
-            $instagram = array();
-
-            foreach ( $images as $image ) {
-
-                $image['thumbnail_src'] = preg_replace( '/^https?\:/i', '', $image['thumbnail_src'] );
-                $image['display_src'] = preg_replace( '/^https?\:/i', '', $image['display_src'] );
-
-                // handle both types of CDN url
-                if ( ( strpos( $image['thumbnail_src'], 's640x640' ) !== false ) ) {
-                    $image['thumbnail'] = str_replace( 's640x640', 's160x160', $image['thumbnail_src'] );
-                    $image['small'] = str_replace( 's640x640', 's320x320', $image['thumbnail_src'] );
-                } else {
-                    $urlparts = wp_parse_url( $image['thumbnail_src'] );
-                    $pathparts = explode( '/', $urlparts['path'] );
-                    array_splice( $pathparts, 3, 0, array( 's160x160' ) );
-                    $image['thumbnail'] = '//' . $urlparts['host'] . implode( '/', $pathparts );
-                    $pathparts[3] = 's320x320';
-                    $image['small'] = '//' . $urlparts['host'] . implode( '/', $pathparts );
-                }
-
-                $image['large'] = $image['thumbnail_src'];
-
-                if ( $image['is_video'] == true ) {
-                    $type = 'video';
-                } else {
-                    $type = 'image';
-                }
-
-                $caption = esc_html__( 'Instagram Image', 'olivo' );
-                if ( ! empty( $image['caption'] ) ) {
-                    $caption = $image['caption'];
-                }
-
-                $instagram[] = array(
-                    'id'   => $image['id'],
-                    'description'   => $caption,
-                    'link'          => trailingslashit( '//instagram.com/p/' . $image['code'] ),
-                    'time'          => $image['date'],
-                    'comments'      => $image['comments']['count'],
-                    'likes'         => $image['likes']['count'],
-                    'thumbnail'     => $image['thumbnail'],
-                    'small'         => $image['small'],
-                    'large'         => $image['large'],
-                    'original'      => $image['display_src'],
-                    'dimensions'      => $image['dimensions'],
-                    'type'          => $type
-                );
-            }
-
-            // do not set an empty transient - should help catch private or empty accounts
-            if ( ! empty( $instagram ) ) {
-                $instagram = base64_encode( serialize( $instagram ) );
-                if ( ! empty( $max_id ) ) {
-                    set_transient( 'olivo-instagram-a10-' . sanitize_title_with_dashes( $username ) . '-' . sanitize_title_with_dashes( $max_id ), $instagram, apply_filters( 'null_instagram_cache_time', HOUR_IN_SECONDS*2 ) );
-                }else{
-                    set_transient( 'olivo-instagram-a10-'.sanitize_title_with_dashes( $username ), $instagram, apply_filters( 'null_instagram_cache_time', HOUR_IN_SECONDS*2 ) );
-                }
-            }
-        }
-
-        if ( ! empty( $instagram ) ) {
-
-            return unserialize( base64_decode( $instagram ) );
-
-        } else {
-
-            return new WP_Error( 'no_images', esc_html__( 'Instagram did not return any images.', 'olivo' ) );
-
-        }
-    }

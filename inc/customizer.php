@@ -225,7 +225,7 @@ function krea_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'krea_typography_not_kirki', array( 'default' => '', 'sanitize_callback' => 'krea_sanitize_text', ) );
 		$wp_customize->add_control( new krea_Display_Text_Control( $wp_customize, 'krea_typography_not_kirki', array(
 			'section' => 'krea_typography_section', // Required, core or custom.
-			'label' => sprintf( esc_html__( 'To change typography make sure you have installed the %1$s Kirki Toolkit %2$s plugin.', 'krea' ), '<a href="' . get_admin_url( null, 'themes.php?page=tgmpa-install-plugins' ) . '">', '</a>' ),
+			'label' => sprintf( /* translators: 1: anchor link, 2: close anchor */ esc_html__( 'To change typography make sure you have installed the %1$s Kirki Toolkit %2$s plugin.', 'krea' ), '<a href="' . get_admin_url( null, 'themes.php?page=tgmpa-install-plugins' ) . '">', '</a>' ),
 		) ) );
 	}//if Kirki exists
 

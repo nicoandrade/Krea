@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 == Credits ==
 
-Krea WordPress Theme, Copyright 2017 Nicolas Andrade
+Krea WordPress Theme, Copyright 2018 Nicolas Andrade
 Krea is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -66,6 +66,10 @@ Pace
 License: https://raw.githubusercontent.com/HubSpot/pace/master/LICENSE
 Source: http://github.hubspot.com/pace/docs/welcome/
 
+Appear by CreativeLive | MIT License
+License: https://github.com/creativelive/appear/blob/master/LICENSE
+Source: https://github.com/creativelive/appear
+
 HTML5 Shiv by @afarkas @jdalton @jon_neal @rem
 License: MIT/GPL2 Licensed
 Source: https://github.com/afarkas/html5shiv
@@ -73,6 +77,4 @@ Source: https://github.com/afarkas/html5shiv
 [Open Sans Font](https://fonts.google.com/specimen/Open+Sans) by Steve Matteson - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 [Playfair Display Font](https://fonts.google.com/specimen/Playfair+Display) by Claus Eggers Sørensen - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 
-Images from Unsplash
-License: https://unsplash.com/license
-Source: https://unsplash.com
+Images in screenshot created by me.

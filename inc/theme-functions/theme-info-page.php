@@ -23,7 +23,7 @@ function quemalabs_getting_started_page() {
 				<div class="theme-content-wrap">
 				<h4><?php esc_html_e( 'Getting Started', 'krea' ); ?></h4>
 				<h2 class="theme-name"><?php echo esc_html( KREA_THEME_NAME ); ?> <span class="ver"><?php echo 'v' . esc_html( KREA_THEME_VERSION ); ?></span></h2>
-				<p><?php echo sprintf( esc_html__( 'Thanks for using %s, we appriciate that you create with our products.', 'krea' ), esc_html( KREA_THEME_NAME ) ); ?></p>
+				<p><?php echo sprintf( /* translators: %s: theme name */ esc_html__( 'Thanks for using %s, we appriciate that you create with our products.', 'krea' ), esc_html( KREA_THEME_NAME ) ); ?></p>
 				<p><?php esc_html_e( 'Check the content below to get started with our theme.', 'krea' ); ?></p>
 				</div>
 
@@ -36,13 +36,13 @@ function quemalabs_getting_started_page() {
 					}
 					?>
 					<li><a href="?page=krea_theme-info&amp;tab=docs" class="<?php echo ( $tab == 'docs' ) ? ' active' : ''; ?>"><i class="fa fa-file-text-o"></i> <?php esc_html_e( 'Documentation', 'krea' ); ?></a></li>
-					<li><a href="https://quemalabs.ticksy.com/" target="_blank"><i class="fa fa-support"></i> <?php esc_html_e( 'Support', 'krea' ); ?></a></li>
-					<li><a href="https://www.quemalabs.com/" target="_blank" class="<?php echo ( $tab == 'more-themes' ) ? ' active' : ''; ?>"><i class="fa fa-wordpress"></i> <?php esc_html_e( 'More Themes', 'krea' ); ?></a></li>
+					<li><a href="<?php echo esc_url( 'https://quemalabs.ticksy.com/' ); ?>" target="_blank"><i class="fa fa-support"></i> <?php esc_html_e( 'Support', 'krea' ); ?></a></li>
+					<li><a href="<?php echo esc_url( 'https://www.quemalabs.com/' ); ?>" target="_blank" class="<?php echo ( $tab == 'more-themes' ) ? ' active' : ''; ?>"><i class="fa fa-wordpress"></i> <?php esc_html_e( 'More Themes', 'krea' ); ?></a></li>
 				</ul>
 
 			</div><!-- .theme-content -->
 		</div>
-		<a href="https://www.quemalabs.com/" class="ql_logo" target="_blank"><img  src="<?php echo esc_url( get_template_directory_uri() ) . '/images/quemalabs.png'; ?>" alt="Quema Labs" /></a>
+		<a href="<?php echo esc_url( 'https://www.quemalabs.com/' ); ?>" class="ql_logo" target="_blank"><img  src="<?php echo esc_url( get_template_directory_uri() ) . '/images/quemalabs.png'; ?>" alt="Quema Labs" /></a>
 	</div><!-- .getting-started-header -->
 
 	<div class="getting-started-content">
@@ -64,7 +64,7 @@ function quemalabs_getting_started_page() {
 
 			<div class="theme-docuementation">
 				<div class="help-msg-wrap">
-					<div class="help-msg"><?php echo sprintf( esc_html__( 'You can find this documentation and more at our %1$sHelp Center%2$s.', 'krea' ), '<a href="https://quemalabs.ticksy.com/articles/100010581" target="_blank">', '</a>' ); ?></div>
+					<div class="help-msg"><?php echo sprintf( /* translators: 1: anchor link, 2: anchor close */ esc_html__( 'You can find this documentation and more at our %1$sHelp Center%2$s.', 'krea' ), '<a href="' . esc_url( 'https://quemalabs.ticksy.com/articles/100012843' ) . '" target="_blank">', '</a>' ); ?></div>
 				</div>
 					
 			<?php
@@ -77,12 +77,12 @@ function quemalabs_getting_started_page() {
 				return;
 			}
 			global $wp_filesystem;
-			$content = $wp_filesystem->get_contents( 'https://quemalabs.ticksy.com/articles/100010581' );
+			$content = $wp_filesystem->get_contents( esc_url( 'https://quemalabs.ticksy.com/articles/100012843' ) );
 			if ( $content ) {
 				$first_step = explode( '<article class="articles-list">' , $content );
 				$second_step = explode("</article>" , $first_step[1] );
 
-				echo wp_kses_post( str_replace( '<a href="/article/', '<a target="_blank" href="https://quemalabs.ticksy.com/article/', $second_step[0] ) );
+				echo wp_kses_post( str_replace( '<a href="/article/', '<a target="_blank" href="' . esc_url( 'https://quemalabs.ticksy.com/article/' ), $second_step[0] ) );
 			}
 			?>
 

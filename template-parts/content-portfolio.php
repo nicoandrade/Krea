@@ -23,7 +23,7 @@ if ( ! is_wp_error( $term_list ) ) {
 	}
 }
 
-echo "\t\t\t<div id='portfolio-item-" . esc_attr( $post->ID ) . "' class='portfolio-item " . esc_attr( $terms_to_print ) . $image_print;
+echo "\t\t\t<div id='portfolio-item-" . esc_attr( $post->ID ) . "' class='portfolio-item " . esc_attr( $terms_to_print ) . $image_print; // WPCS: XSS OK.
     echo "\t\t\t\t<a href='" . esc_url( get_permalink() ) . "'></a>\n";
     echo '<div class="portfolio-item-hover-preload"></div>';
 	echo '<div class="portfolio-item-hover">';
