@@ -228,13 +228,6 @@
 		"oAP": "\/inc\/theme-functions\/custom-header.php",
 		"oF": 0
 		},
-	"\/inc\/theme-functions\/demo-import-data.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/inc\/theme-functions\/demo-import-data.php",
-		"oF": 0
-		},
 	"\/inc\/theme-functions\/ql_tgm_plugin_activation.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -323,11 +316,11 @@
 	"\/js\/customizer-preview.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/customizer-preview-min.js",
-		"oF": 0,
-		"sC": 1,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/js\/customizer-preview.js",
+		"oF": 3,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/js\/customizer.js": {

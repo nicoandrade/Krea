@@ -50,14 +50,10 @@ function krea_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	if ( function_exists( 'add_image_size' ) ) {
-		//Blog
-		add_image_size( 'krea_post', 525, 525, true );
+	//Blog
+	add_image_size( 'krea_post', 525, 525, true );
 
-		add_image_size( 'krea_portfolio', 780, 9999, false );
-
-
-	}
+	add_image_size( 'krea_portfolio', 780, 9999, false );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -131,18 +127,6 @@ add_action( 'widgets_init', 'krea_widgets_init' );
 
 
 /**
- * Register widgets.
- *
- * @link https://codex.wordpress.org/Widgets_API
- */
-function krea_widgets_register() {
-
-}
-add_action( 'widgets_init', 'krea_widgets_register' );
-
-
-
-/**
  * Enqueue scripts and styles.
  */
 function krea_scripts() {
@@ -175,8 +159,15 @@ require get_template_directory() . '/inc/scripts/styles.php';
  * Enqueue styles to the Admin Panel.
  */
 function krea_wp_admin_style() {
+
+	$current_screen = get_current_screen();
+
+    if( "appearance_page_krea_theme-info" == $current_screen->id ) {
+
         wp_register_style( 'krea_custom_wp_admin_css', get_template_directory_uri() . '/css/admin-styles.css', false, '1.0.0' );
-        wp_enqueue_style( 'krea_custom_wp_admin_css' );
+		wp_enqueue_style( 'krea_custom_wp_admin_css' );
+		
+	}
 }
 add_action( 'admin_enqueue_scripts', 'krea_wp_admin_style' );
 
@@ -235,17 +226,4 @@ require get_template_directory() . '/inc/jetpack.php';
 	// Retina Logo
 	require get_template_directory() . '/inc/theme-functions/retina-logo.php';
 
-	// Demo Import Data
-	require get_template_directory() . '/inc/theme-functions/demo-import-data.php';
-
-
-
-/**
- * Redirect after theme installation
- *
- */
-function krea_theme_redirect () {
-	wp_redirect( esc_url( admin_url( 'themes.php?page=krea_theme-info' ) ) );
-}
-add_action( 'after_switch_theme', 'krea_theme_redirect' );
 

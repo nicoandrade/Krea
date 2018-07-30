@@ -1,9 +1,37 @@
-* 1.0.1 - 08/06/2017
+* 1.0.6 - 30/07/2018
+====================
+- Added: Missing license on Readme
+- Fixed: Admin Bar overlapping menu on mobile
+
+
+* 1.0.5 - 27/07/2018
+====================
+- Updated: Readme
+- Removed: Fetching data in Theme Info pages
+- Fixed: Menu when user is logged in
+
+
+* 1.0.4 - 23/07/2018
+====================
+- Updated: Readme
+
+
+* 1.0.3 - 23/07/2018
+====================
+- Fixed: Admin Styles only load on required pages
+
+
+* 1.0.2 - 23/07/2018
+====================
+- Fixed: Several issues before theme live
+
+
+* 1.0.1 - 08/06/2018
 ====================
 - Added: Translators notes
 - Added: Js credit
 
 
-* 1.0.0 - 06/06/2017
+* 1.0.0 - 06/06/2018
 ====================
 - Released

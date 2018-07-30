@@ -57,7 +57,8 @@ function krea_header_style() {
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>
-		.logo_container .ql_logo {
+		.logo_container .ql_logo,
+		.site-description{
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
@@ -70,7 +71,8 @@ function krea_header_style() {
 		.top-bar,
 		.krea-sidenav #header .main-navigation a,
 		.main-navigation a,
-		#krea-nav-btn
+		#krea-nav-btn,
+		.site-title .ql_logo
 		{
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}

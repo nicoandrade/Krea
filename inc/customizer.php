@@ -34,7 +34,6 @@ function krea_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 
 
@@ -46,16 +45,7 @@ function krea_customize_register( $wp_customize ) {
 		------------------------------ */
 		$wp_customize->add_setting( 'krea_hero_color', array( 'default' => '#0000ff', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'krea_hero_color', array(
-			'label'        => esc_attr__( 'Featured Color', 'krea' ),
-			'section'    => 'colors',
-		) ) );
-
-		/*
-		Logo
-		------------------------------ */
-		$wp_customize->add_setting( 'krea_logo_color', array( 'default' => '#222222', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'krea_logo_color', array(
-			'label'        => esc_attr__( 'Logo Color', 'krea' ),
+			'label'        => esc_html__( 'Featured Color', 'krea' ),
 			'section'    => 'colors',
 		) ) );
 
@@ -64,7 +54,7 @@ function krea_customize_register( $wp_customize ) {
 		------------------------------ */
 		$wp_customize->add_setting( 'krea_headings_color', array( 'default' => '#222222', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'krea_headings_color', array(
-			'label'        => esc_attr__( 'Headings Color', 'krea' ),
+			'label'        => esc_html__( 'Headings Color', 'krea' ),
 			'section'    => 'colors',
 		) ) );
 
@@ -73,7 +63,7 @@ function krea_customize_register( $wp_customize ) {
 		------------------------------ */
 		$wp_customize->add_setting( 'krea_text_color', array( 'default' => '#808080', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'krea_text_color', array(
-			'label'        => esc_attr__( 'Text Color', 'krea' ),
+			'label'        => esc_html__( 'Text Color', 'krea' ),
 			'section'    => 'colors',
 		) ) );
 
@@ -82,7 +72,7 @@ function krea_customize_register( $wp_customize ) {
 		------------------------------ */
 		$wp_customize->add_setting( 'krea_link_color', array( 'default' => '#0000ff', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'krea_link_color', array(
-			'label'        => esc_attr__( 'Link Color', 'krea' ),
+			'label'        => esc_html__( 'Link Color', 'krea' ),
 			'section'    => 'colors',
 		) ) );
 
@@ -91,7 +81,7 @@ function krea_customize_register( $wp_customize ) {
 		------------------------------ */
 		$wp_customize->add_setting( 'krea_footer_background', array( 'default' => '#ffffff', 'transport' => 'postMessage', 'sanitize_callback' => 'sanitize_hex_color', 'type' => 'theme_mod' ) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'krea_footer_background', array(
-			'label'        => esc_attr__( 'Footer Background Color', 'krea' ),
+			'label'        => esc_html__( 'Footer Background Color', 'krea' ),
 			'section'    => 'colors',
 		) ) );
 
@@ -112,17 +102,17 @@ function krea_customize_register( $wp_customize ) {
     ===================================================== */
 
     $wp_customize->add_section( 'krea_site_options_section', array(
-			'title' => esc_attr__( 'Site Options', 'krea' ),
+			'title' => esc_html__( 'Site Options', 'krea' ),
 			'priority' => 140,
 	) );
 
 	$animations_options = array(
-			'true' => esc_attr__( 'Enable', 'krea' ),
-			'false' => esc_attr__( 'Disable', 'krea' ),
+			'true' => esc_html__( 'Enable', 'krea' ),
+			'false' => esc_html__( 'Disable', 'krea' ),
 		);
 	$wp_customize->add_setting( 'krea_site_animations', array( 'default' => 'true', 'sanitize_callback' => 'krea_sanitize_text', 'type' => 'theme_mod' ) );
 	$wp_customize->add_control( 'krea_site_animations', array(
-        'label'   => esc_attr__( 'Enable/Disable Site Animations', 'krea' ),
+        'label'   => esc_html__( 'Enable/Disable Site Animations', 'krea' ),
         'section' => 'krea_site_options_section',
         'settings'   => 'krea_site_animations',
         'type'       => 'select',
@@ -138,7 +128,7 @@ function krea_customize_register( $wp_customize ) {
 	Typography
 	------------------------------ */
 	$wp_customize->add_section( 'krea_typography_section', array(
-		'title' => esc_attr__( 'Typography', 'krea' ),
+		'title' => esc_html__( 'Typography', 'krea' ),
 	) );
 
 	if ( class_exists( 'Kirki' ) ){
@@ -236,28 +226,6 @@ add_action( 'customize_register', 'krea_customize_register' );
 
 
 
-
-
-
-
-
-
-
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function krea_customize_kirki_register( $wp_customize ) {
-
-}
-
-add_action( 'customize_register', 'krea_customize_kirki_register' );
-
-
-
-
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
@@ -333,13 +301,6 @@ function krea_sanitize_any( $input ) {
  */
 function krea_sanitize_text( $str ) {
 	return sanitize_text_field( $str );
-}
-
-/**
- * Sanitize Textarea
- */
-function krea_sanitize_textarea( $text ) {
-	return esc_textarea( $text );
 }
 
 /**

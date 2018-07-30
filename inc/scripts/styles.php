@@ -9,14 +9,14 @@ function krea_custom_css() {
 	/*
 	Colors
 	*/
-	$heroColor = get_theme_mod( 'krea_hero_color', '#0000ff' );
-	$headings_color = get_theme_mod( 'krea_headings_color', '#222222' );
-	$text_color = get_theme_mod( 'krea_text_color', '#777777' );
-	$link_color = get_theme_mod( 'krea_link_color', '#0000ff' );
-	$content_background_color = get_theme_mod( 'krea_content_background_color', '#FFFFFF' );
-	$footer_background = get_theme_mod( 'krea_footer_background', '#FFFFFF' );
-	$site_background_color = get_theme_mod( 'krea_site_background_color', '#e08461' );
-	$logo_color = get_theme_mod( 'krea_logo_color', '#222222' );
+	$heroColor = esc_attr( get_theme_mod( 'krea_hero_color', '#0000ff' ) );
+	$headings_color = esc_attr( get_theme_mod( 'krea_headings_color', '#222222' ) );
+	$text_color = esc_attr( get_theme_mod( 'krea_text_color', '#777777' ) );
+	$link_color = esc_attr( get_theme_mod( 'krea_link_color', '#0000ff' ) );
+	$content_background_color = esc_attr( get_theme_mod( 'krea_content_background_color', '#FFFFFF' ) );
+	$footer_background = esc_attr( get_theme_mod( 'krea_footer_background', '#FFFFFF' ) );
+	$site_background_color = esc_attr( get_theme_mod( 'krea_site_background_color', '#e08461' ) );
+	$logo_color = esc_attr( get_theme_mod( 'krea_logo_color', '#222222' ) );
 
 	$colors = array(
 		'heroColor'      => $heroColor,
@@ -42,7 +42,7 @@ function krea_custom_css() {
 	$krea_typography_font_family = get_theme_mod( 'krea_typography_font_family', 'Source Sans Pro' );
 	$krea_typography_font_family_headings = get_theme_mod( 'krea_typography_font_family_headings', 'Inconsolata' );
 	$krea_typography_subsets = get_theme_mod( 'krea_typography_subsets', '' );
-	$krea_typography_font_size = get_theme_mod( 'krea_typography_font_size', '16' );
+	$krea_typography_font_size = esc_attr( get_theme_mod( 'krea_typography_font_size', '16' ) );
 
 	$typography = array(
 		'font-family' 		   => $krea_typography_font_family,
@@ -60,10 +60,10 @@ function krea_custom_css() {
 		$krea_font_subset = rtrim( $krea_font_subset, ',' );
 	}
 
-	$krea_google_font = '//fonts.googleapis.com/css?family=' . $krea_typography_font_family . ':400,700' . $krea_font_subset;
+	$krea_google_font = '//fonts.googleapis.com/css?family=' . esc_attr( $krea_typography_font_family ) . ':400,700' . esc_attr( $krea_font_subset );
 	wp_enqueue_style( 'krea_google-font', $krea_google_font, array(), '1.0', 'all');
 
-	$krea_google_font_headings = '//fonts.googleapis.com/css?family=' . $krea_typography_font_family_headings . ':400,700' . $krea_font_subset;
+	$krea_google_font_headings = '//fonts.googleapis.com/css?family=' . esc_attr( $krea_typography_font_family_headings ) . ':400,700' . esc_attr( $krea_font_subset );
 	wp_enqueue_style( 'krea_google-font-headings', $krea_google_font_headings, array(), '1.0', 'all');
 
 	$custom_css = krea_get_custom_typography_css( $typography );
@@ -98,7 +98,7 @@ function krea_get_custom_css( $colors ) {
 	) );
 	$heroColor_darker = krea_darken_color( $colors['heroColor'], 1.1 );
 	$link_color_darker = krea_darken_color( $colors['link_color'], 1.2 );
-	$heroColor_rgb = hex2rgb( $colors['heroColor'] );
+	$heroColor_rgb = krea_hex2rgb( $colors['heroColor'] );
 
 	$css = <<<CSS
 

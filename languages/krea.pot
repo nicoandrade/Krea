@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Krea\n"
-"POT-Creation-Date: 2018-06-08 12:10-0300\n"
-"PO-Revision-Date: 2018-06-08 12:10-0300\n"
+"POT-Creation-Date: 2018-07-30 12:49-0300\n"
+"PO-Revision-Date: 2018-07-30 12:49-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -93,79 +93,75 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:60
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:65
+#: functions.php:61
 msgid "Social Menu"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:48
 msgid "Featured Color"
 msgstr ""
 
-#: inc/customizer.php:58
-msgid "Logo Color"
-msgstr ""
-
-#: inc/customizer.php:67
+#: inc/customizer.php:57
 msgid "Headings Color"
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:66
 msgid "Text Color"
 msgstr ""
 
-#: inc/customizer.php:85
+#: inc/customizer.php:75
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:94
+#: inc/customizer.php:84
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:105
 msgid "Site Options"
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:110
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:111
 msgid "Disable"
 msgstr ""
 
-#: inc/customizer.php:125
+#: inc/customizer.php:115
 msgid "Enable/Disable Site Animations"
 msgstr ""
 
-#: inc/customizer.php:141
+#: inc/customizer.php:131
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:139
 msgid "Font Family"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:155
 msgid "Headings Font Family"
 msgstr ""
 
-#: inc/customizer.php:181
+#: inc/customizer.php:171
 msgid "Google-Font subsets"
 msgstr ""
 
-#: inc/customizer.php:182
+#: inc/customizer.php:172
 msgid "The subsets used from Google's API."
 msgstr ""
 
-#: inc/customizer.php:198
+#: inc/customizer.php:188
 msgid "Font Size"
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:218
 #, php-format
 msgid ""
 "To change typography make sure you have installed the %1$s Kirki Toolkit "
@@ -670,76 +666,6 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/theme-functions/demo-import-data.php:17
-msgid "Home Big"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:23
-#: inc/theme-functions/demo-import-data.php:41
-#: inc/theme-functions/demo-import-data.php:50
-#: inc/theme-functions/demo-import-data.php:59
-#: inc/theme-functions/demo-import-data.php:68
-#: inc/theme-functions/demo-import-data.php:77
-#: inc/theme-functions/demo-import-data.php:86
-#: inc/theme-functions/demo-import-data.php:95
-#: inc/theme-functions/demo-import-data.php:104
-#: inc/theme-functions/demo-import-data.php:113
-#: inc/theme-functions/demo-import-data.php:122
-msgid ""
-"Click on \"Import Demo Data\" to start importing. Images were replaced by a "
-"placeholder to avoid long waits."
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:26
-msgid "Home Slider"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:32
-msgid ""
-"Click on \"Import Demo Data\" to start importing. Images were replaced by a "
-"placeholder to avoid long waits. Note: Remember to import the slider too."
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:35
-msgid "Big Thirds"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:44
-msgid "Home Horizontal"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:53
-msgid "Home Stairs"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:62
-msgid "Home Triple Full"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:71
-msgid "Home Full Slider"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:80
-msgid "Catalog"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:89
-msgid "Banners Shop"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:98
-msgid "Jewelry Stairs"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:107
-msgid "Fashion"
-msgstr ""
-
-#: inc/theme-functions/demo-import-data.php:116
-msgid "Fashion Slider"
-msgstr ""
-
 #: inc/theme-functions/retina-logo.php:103
 msgid "Is this image retina-ready?"
 msgstr ""
@@ -780,14 +706,6 @@ msgstr ""
 #: inc/theme-functions/theme-info-page.php:67
 #, php-format
 msgid "You can find this documentation and more at our %1$sHelp Center%2$s."
-msgstr ""
-
-#: inc/theme-functions/theme-info-page.php:128
-msgid "Premium"
-msgstr ""
-
-#: inc/theme-functions/theme-info-page.php:130
-msgid "Free"
 msgstr ""
 
 #: inc/widget-areas/widget-areas.php:8

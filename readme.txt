@@ -50,31 +50,19 @@ Modernizr by Faruk, Paul, Alex, Ryan, Patrick, Stu, and Richard | MIT License
 License: https://opensource.org/licenses/MIT
 Source: https://modernizr.com
 
-ScrollReveal by @jlmakes | MIT License
-License: https://github.com/jlmakes/scrollreveal.js/blob/master/LICENSE.md
-Source: https://scrollrevealjs.org
+Appear by creativelive | MIT License
+License: https://github.com/creativelive/appear/blob/master/LICENSE
+Source: https://github.com/creativelive/appear
 
-imagesLoaded by Metafizzy | MIT License
-License: http://desandro.mit-license.org/
-Source: http://imagesloaded.desandro.com
+Pace by HubSpot | MIT License
+License: https://raw.githubusercontent.com/HubSpot/pace/master/LICENSE
+Source: http://github.hubspot.com/pace/docs/welcome/
 
 Flickity by Metafizzy | GPLv3
 License: http://isotope.metafizzy.co/license.html
 Source: http://isotope.metafizzy.co/
 
-Pace
-License: https://raw.githubusercontent.com/HubSpot/pace/master/LICENSE
-Source: http://github.hubspot.com/pace/docs/welcome/
-
-Appear by CreativeLive | MIT License
-License: https://github.com/creativelive/appear/blob/master/LICENSE
-Source: https://github.com/creativelive/appear
-
-HTML5 Shiv by @afarkas @jdalton @jon_neal @rem
-License: MIT/GPL2 Licensed
-Source: https://github.com/afarkas/html5shiv
-
-[Open Sans Font](https://fonts.google.com/specimen/Open+Sans) by Steve Matteson - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
+[Source Sans Pro Font](https://fonts.google.com/specimen/Source+Sans+Pro) by Paul D. Hunt - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 [Playfair Display Font](https://fonts.google.com/specimen/Playfair+Display) by Claus Eggers Sørensen - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 
 Images in screenshot created by me.

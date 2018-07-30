@@ -2,7 +2,7 @@
 Theme Name: Krea
 Theme URI: https://www.quemalabs.com/theme/krea/
 Description: Krea is a beautiful and free portfolio WordPress theme, perfect for any creative use.
-Version: 1.0.1
+Version: 1.0.6
 Author: Quema Labs
 Author URI: https://www.quemalabs.com/
 License: GNU General Public License v2 or later
@@ -53,6 +53,12 @@ Header
   background-position: center;
   background-size: cover;
   margin-bottom: 2.5em;
+}
+#header .site-description {
+  font-size: 12px;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: 5px;
 }
 #header .container {
   position: relative;
@@ -336,7 +342,7 @@ Header
   font-weight: 800;
   line-height: 1.5;
   margin: 1px auto 2px;
-  padding: 1em;
+  padding: 9px;
   text-shadow: none;
 }
 /*
@@ -4367,10 +4373,10 @@ a img.aligncenter {
 */
 html {
   font-size: 1em;
+  position: relative;
 }
 body {
   overflow-x: hidden;
-  position: relative;
 }
 h1,
 h2,
@@ -5067,6 +5073,12 @@ textarea {
 	// ------------------
 	*/
 @media (max-width: 767px) {
+  html {
+    position: initial;
+  }
+  .admin-bar .krea-main-menu {
+    margin-top: 46px;
+  }
   .pace {
     display: none;
   }

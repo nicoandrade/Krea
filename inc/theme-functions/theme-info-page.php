@@ -66,26 +66,6 @@ function quemalabs_getting_started_page() {
 				<div class="help-msg-wrap">
 					<div class="help-msg"><?php echo sprintf( /* translators: 1: anchor link, 2: anchor close */ esc_html__( 'You can find this documentation and more at our %1$sHelp Center%2$s.', 'krea' ), '<a href="' . esc_url( 'https://quemalabs.ticksy.com/articles/100012843' ) . '" target="_blank">', '</a>' ); ?></div>
 				</div>
-					
-			<?php
-			$url = wp_nonce_url( 'themes.php?page=krea_theme-info', 'more-themes' );
-			if ( false === ( $creds = request_filesystem_credentials( $url, '', false, false, null ) ) ) {
-				return; // stop processing here
-			}
-			if ( ! WP_Filesystem( $creds ) ) {
-				request_filesystem_credentials( $url, '', true, false, null );
-				return;
-			}
-			global $wp_filesystem;
-			$content = $wp_filesystem->get_contents( esc_url( 'https://quemalabs.ticksy.com/articles/100012843' ) );
-			if ( $content ) {
-				$first_step = explode( '<article class="articles-list">' , $content );
-				$second_step = explode("</article>" , $first_step[1] );
-
-				echo wp_kses_post( str_replace( '<a href="/article/', '<a target="_blank" href="' . esc_url( 'https://quemalabs.ticksy.com/article/' ), $second_step[0] ) );
-			}
-			?>
-
 			</div><!-- .theme-docuementation -->
 			<?php
 	      	break;
@@ -95,51 +75,6 @@ function quemalabs_getting_started_page() {
 			$updater->license_page();
 	      	
 	        ?>
-
-        <?php
-        	break;
-        	case 'more-themes' :
-
-        	$url = wp_nonce_url( 'themes.php?page=krea_theme-info', 'more-themes' );
-			if ( false === ( $creds = request_filesystem_credentials( $url, '', false, false, null ) ) ) {
-				return; // stop processing here
-			}
-			if ( ! WP_Filesystem( $creds ) ) {
-				request_filesystem_credentials( $url, '', true, false, null );
-				return;
-			}
-			global $wp_filesystem;
-			$json = $wp_filesystem->get_contents( 'https://www.quemalabs.com/wp-json/quemalabs/v1/themes/' );
-			$themes = json_decode( $json );
-
-        	echo '<div class="more-themes">';
-
-				foreach ( $themes as $theme ) {
-					if ( 'krea' == $theme->slug ) continue;
-						
-					?>
-					<div class="ql-theme">
-						<a href="<?php echo esc_url( $theme->url ); ?>" class="ql-theme-image" target="_blank"><img src="<?php echo esc_url( $theme->image ); ?>" alt="<?php echo esc_attr( $theme->slug ); ?>" /></a>
-						<div class="ql-theme-info">
-							<h4><a href="<?php echo esc_url( $theme->url ); ?>" target="_blank"><?php echo esc_html( $theme->name ); ?></a></h4>
-							<p><?php echo esc_html( $theme->sub_title ); ?></p>
-							<?php
-							if( 'premium' == $theme->type ){
-								$type = esc_html__( 'Premium', 'krea' );
-							}else{
-								$type = esc_html__( 'Free', 'krea' );
-							}
-							?>
-							<a href="<?php echo esc_url( $theme->url ); ?>" class="ql-theme-button <?php echo esc_attr( $theme->type ); ?>" target="_blank"><?php echo esc_html( $type ); ?></a>
-						</div>
-					</div>
-					<?php
-				}
-
-        ?>
-
-				
-        	</div><!-- .more-themes -->
 
         <?php
         	break;

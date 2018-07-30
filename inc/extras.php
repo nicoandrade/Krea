@@ -159,7 +159,7 @@ function krea_all_meta_sliders( $sort_key = 'date' ) {
 /**
  * Convert HEX colors to RGB
  */
-function hex2rgb( $colour ) {
+function krea_hex2rgb( $colour ) {
     $colour = str_replace("#", "", $colour);
     if ( strlen( $colour ) == 6 ) {
             list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
@@ -179,7 +179,7 @@ function hex2rgb( $colour ) {
  *
  * @return array
  */
- function get_portfolios_slug(){
+ function krea_get_portfolios_slug(){
 
     if ( class_exists( 'Multiple_Portfolios' ) ) {
 
@@ -201,7 +201,7 @@ function hex2rgb( $colour ) {
 *
 * @return array
 */
-function get_portfolios_options(){
+function krea_get_portfolios_options(){
 
     if ( class_exists( 'Multiple_Portfolios' ) ) {
 
@@ -265,7 +265,7 @@ if ( ! function_exists( 'rwmb_meta' ) ) {
 if ( ! function_exists( 'krea_is_portfolio_type' ) ) {
     function krea_is_portfolio_type( $post_type ) {
 
-    	$krea_portfolios_post_types = get_portfolios_slug();
+    	$krea_portfolios_post_types = krea_get_portfolios_slug();
         if ( ! is_wp_error( $krea_portfolios_post_types ) ) {
         	if ( in_array( $post_type, $krea_portfolios_post_types ) ) :
                 return true;
@@ -720,3 +720,14 @@ function krea_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
     return $title;
 }
 add_filter( 'nav_menu_item_title', 'krea_dropdown_icon_to_menu_link', 10, 4 );
+
+
+/**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
+function krea_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+	}
+}
+add_action( 'wp_head', 'krea_pingback_header' );
